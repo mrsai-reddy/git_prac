@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Personal Information Form</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+        <label>Interests:</label><br>
+        <input type="checkbox" id="reading" name="interests" value="reading">
+        <label for="reading">Reading</label><br>
+        <input type="checkbox" id="traveling" name="interests" value="traveling">
+        <label for="traveling">Traveling</label><br>
+        <input type="checkbox" id="sports" name="interests" value="sports">
+        <label for="sports">Sports</label><br><br>
+        <label for="bio">Short Bio:</label><br>
+        <textarea id="bio" name="bio"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Place script here -->
+    <script src="script.js"></script>
+</body>
+</html>
