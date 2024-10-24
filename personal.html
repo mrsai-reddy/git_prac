@@ -1,36 +1,284 @@
+1. Personal InformaƟon Form
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+ <meta charset="UTF-8"> 
+ <meta name="viewport" content="width=device-width, iniƟal-scale=1.0"> 
+ <Ɵtle>Personal InformaƟon Form</Ɵtle>
+</head> 
+<body> 
+ <h2>Personal InformaƟon Form</h2>
+ <form> 
+ <label for="name">Name:</label> 
+ <input type="text" id="name" name="name"><br><br> 
+ <label for="email">Email:</label> 
+ <input type="email" id="email" name="email"><br><br> 
+ <label>Gender:</label> 
+ <input type="radio" id="male" name="gender" value="male"> 
+ <label for="male">Male</label> 
+ <input type="radio" id="female" name="gender" value="female"> 
+ <label for="female">Female</label><br><br> 
+ <label>Interests:</label><br> 
+ <input type="checkbox" id="reading" name="interests" value="reading"> 
+ <label for="reading">Reading</label><br> 
+ <input type="checkbox" id="traveling" name="interests" value="traveling"> 
+ <label for="traveling">Traveling</label><br> 
+ <input type="checkbox" id="sports" name="interests" value="sports"> 
+ <label for="sports">Sports</label><br><br> 
+ <label for="bio">Short Bio:</label><br>
+ <textarea id="bio" name="bio"></textarea><br><br>
+ <input type="submit" value="Submit">
+ </form>
+</body>
+</html>
+Output:
+Javascript file
+Script.js
+document.querySelector('form').addEventListener('submit', funcƟon(e) {
+ e.preventDefault();
+ const name = document.getElementById('name').value;
+ const email = document.getElementById('email').value;
+ const gender = document.querySelector('input[name="gender"]:checked').value;
+ const interests = Array.from(document.querySelectorAll('input[name="interests"]:checked')) 
+ .map(input => input.value); 
+ const bio = document.getElementById('bio').value; 
+ console.log({ name, email, gender, interests, bio }); 
+ alert('Successfully SubmiƩed!');
+}); 
+2 Product Feedback Form 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+ <meta charset="UTF-8"> 
+ <meta name="viewport" content="width=device-width, iniƟal-scale=1.0"> 
+ <Ɵtle>Product Feedback Form</Ɵtle>
+</head> 
+<body> 
+ <h2>Product Feedback Form</h2> 
+ <form> 
+ <label for="product">Product Name:</label> 
+ <input type="text" id="product" name="product"><br><br> 
+ <label>RaƟng:</label>
+ <input type="radio" id="1star" name="raƟng" value="1">
+ <label for="1star">1 Star</label> 
+ <input type="radio" id="2star" name="raƟng" value="2">
+ <label for="2star">2 Stars</label> 
+ <input type="radio" id="3star" name="raƟng" value="3">
+ <label for="3star">3 Stars</label> 
+ <input type="radio" id="4star" name="raƟng" value="4">
+ <label for="4star">4 Stars</label> 
+ <input type="radio" id="5star" name="raƟng" value="5">
+ <label for="5star">5 Stars</label><br><br>
+ <label for="feedback">Feedback:</label><br>
+ <textarea id="feedback" name="feedback"></textarea><br><br>
+ <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+ <label for="subscribe">Subscribe to newsleƩer</label><br><br>
+ <input type="submit" value="Submit">
+ </form>
+</body>
+</html>
+Output:
+Script.js 
+document.querySelector('form').addEventListener('submit', funcƟon(e) {
+ e.preventDefault(); 
+ const product = document.getElementById('product').value; 
+ const raƟng = document.querySelector('input[name="raƟng"]:checked').value;
+ const feedback = document.getElementById('feedback').value; 
+ const subscribe = document.getElementById('subscribe').checked; 
+ console.log({ product, raƟng, feedback, subscribe });
+ alert('Successfully SubmiƩed!');
+}); 
+3.Event RegistraƟon Form
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+ <meta charset="UTF-8"> 
+ <meta name="viewport" content="width=device-width, iniƟal-scale=1.0"> 
+ <Ɵtle>Event RegistraƟon Form</Ɵtle>
+</head> 
+<body> 
+ <h2>Event RegistraƟon Form</h2>
+ <form> 
+ <label for="fullname">Full Name:</label> 
+ <input type="text" id="fullname" name="fullname"><br><br> 
+ <label for="email">Email Address:</label> 
+ <input type="email" id="email" name="email"><br><br> 
+ <label>Select your session:</label> 
+ <input type="radio" id="session1" name="session" value="session1"> 
+ <label for="session1">Session 1</label> 
+ <input type="radio" id="session2" name="session" value="session2"> 
+ <label for="session2">Session 2</label><br><br> 
+ <label>Interests:</label><br> 
+ <input type="checkbox" id="networking" name="interest" value="networking"> 
+ <label for="networking">Networking</label><br> 
+ <input type="checkbox" id="workshops" name="interest" value="workshops"> 
+ <label for="workshops">Workshops</label><br> 
+ <input type="checkbox" id="keynotes" name="interest" value="keynotes"> 
+ <label for="keynotes">Keynotes</label><br><br> 
+ <label for="notes">AddiƟonal Notes:</label><br>
+ <textarea id="notes" name="notes"></textarea><br><br> 
+ <input type="submit" value="Register"> 
+ </form> 
+</body> 
+</html> 
+Script.js 
+document.querySelector('form').addEventListener('submit', funcƟon(e) {
+ e.preventDefault(); 
+ const fullname = document.getElementById('fullname').value; 
+ const email = document.getElementById('email').value; 
+ const session = document.querySelector('input[name="session"]:checked').value; 
+ const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked')) 
+ .map(input => input.value); 
+ const notes = document.getElementById('notes').value; 
+ console.log({ fullname, email, session, interests, notes }); 
+ alert('Successfully SubmiƩed!');
+});
+Output:
+ 4. Survey Form
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Information Form</title>
-    <link rel="stylesheet" href="style.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, iniƟal-scale=1.0">
+ <Ɵtle>Hotel Booking Form</Ɵtle>
 </head>
 <body>
-    <h2>Personal Information Form</h2>
-    <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br><br>
-        <label>Gender:</label>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label><br><br>
-        <label>Interests:</label><br>
-        <input type="checkbox" id="reading" name="interests" value="reading">
-        <label for="reading">Reading</label><br>
-        <input type="checkbox" id="traveling" name="interests" value="traveling">
-        <label for="traveling">Traveling</label><br>
-        <input type="checkbox" id="sports" name="interests" value="sports">
-        <label for="sports">Sports</label><br><br>
-        <label for="bio">Short Bio:</label><br>
-        <textarea id="bio" name="bio"></textarea><br><br>
-        <input type="submit" value="Submit">
-    </form>
-
-    <!-- Place script here -->
-    <script src="script.js"></script>
-</body>
-</html>
+ <h2>Hotel Booking Form</h2>
+ <form>
+ <label for="fullname">Full Name:</label>
+ <input type="text" id="fullname" name="fullname"><br><br>
+ <label for="checkin">Check-in Date:</label> 
+ <input type="text" id="checkin" name="checkin"><br><br> 
+ <label for="checkout">Check-out Date:</label> 
+ <input type="text" id="checkout" name="checkout"><br><br> 
+ <label>Room Type:</label> 
+ <input type="radio" id="single" name="room" value="single"> 
+ <label for="single">Single</label> 
+ <input type="radio" id="double" name="room" value="double"> 
+ <label for="double">Double</label> 
+ <input type="radio" id="suite" name="room" value="suite"> 
+ <label for="suite">Suite</label><br><br> 
+ <label>Extras:</label><br> 
+ <input type="checkbox" id="breakfast" name="extras" value="breakfast"> 
+ <label for="breakfast">Breakfast</label><br> 
+ <input type="checkbox" id="gym" name="extras" value="gym"> 
+ <label for="gym">Gym access</label><br> 
+ <input type="checkbox" id="pickup" name="extras" value="pickup"> 
+ <label for="pickup">Airport Pickup</label><br><br> 
+ <label for="requests">AddiƟonal Requests:</label><br>
+ <textarea id="requests" name="requests"></textarea><br><br> 
+ <input type="submit" value="Book Now"> 
+ </form> 
+</body> 
+</html> 
+Script.js
+document.querySelector('form').addEventListener('submit', funcƟon(e) {
+ e.preventDefault();
+ const fullname = document.getElementById('fullname').value;
+ const checkin = document.getElementById('checkin').value;
+ const checkout = document.getElementById('checkout').value;
+ const room = document.querySelector('input[name="room"]:checked').value;
+ const extras = Array.from(document.querySelectorAll('input[name="extras"]:checked'))
+ .map(input => input.value);
+ const requests = document.getElementById('requests').value;
+ console.log({ fullname, checkin, checkout, room, extras, requests });
+ alert('Successfully SubmiƩed!');
+});
+Output:
+5. Booking Form 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+ <meta charset="UTF-8"> 
+ <meta name="viewport" content="width=device-width, iniƟal-scale=1.0"> 
+ <Ɵtle>Hotel Booking Form</Ɵtle>
+</head> 
+<body> 
+ <h2>Hotel Booking Form</h2> 
+ <form> 
+ <label for="fullname">Full Name:</label> 
+ <input type="text" id="fullname" name="fullname"><br><br> 
+ <label for="checkin">Check-in Date:</label> 
+ <input type="text" id="checkin" name="checkin"><br><br> 
+ <label for="checkout">Check-out Date:</label> 
+ <input type="text" id="checkout" name="checkout"><br><br> 
+ <label>Room Type:</label> 
+ <input type="radio" id="single" name="room" value="single"> 
+ <label for="single">Single</label> 
+ <input type="radio" id="double" name="room" value="double"> 
+ <label for="double">Double</label> 
+ <input type="radio" id="suite" name="room" value="suite"> 
+ <label for="suite">Suite</label><br><br> 
+ <label>Extras:</label><br> 
+ <input type="checkbox" id="breakfast" name="extras" value="breakfast"> 
+ <label for="breakfast">Breakfast</label><br> 
+ <input type="checkbox" id="gym" name="extras" value="gym"> 
+ <label for="gym">Gym access</label><br> 
+ <input type="checkbox" id="pickup" name="extras" value="pickup"> 
+ <label for="pickup">Airport Pickup</label><br><br> 
+ <label for="requests">AddiƟonal Requests:</label><br>
+ <textarea id="requests" name="requests"></textarea><br><br> 
+ <input type="submit" value="Book Now"> 
+ </form> 
+</body> 
+</html> 
+Script.js 
+document.querySelector('form').addEventListener('submit', funcƟon(e) {
+ e.preventDefault(); 
+ const fullname = document.getElementById('fullname').value; 
+ const checkin = document.getElementById('checkin').value; 
+ const checkout = document.getElementById('checkout').value; 
+ const room = document.querySelector('input[name="room"]:checked').value; 
+ const extras = Array.from(document.querySelectorAll('input[name="extras"]:checked')) 
+ .map(input => input.value); 
+ const requests = document.getElementById('requests').value; 
+ console.log({ fullname, checkin, checkout, room, extras, requests }); 
+ alert('Successfully SubmiƩed!');
+}); 
+Output: 
+css code for all forms
+styles.css
+body {
+ font-family: Arial, sans-serif;
+ background-color: #f0f0f0;
+ margin: 0;
+ padding: 20px;
+}
+form {
+ background-color: #fff;
+ padding: 20px;
+ border-radius: 8px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ max-width: 400px; 
+ margin: 0 auto; 
+} 
+label { 
+ font-weight: bold; 
+ display: block; 
+ margin: 10px 0 5px; 
+} 
+input[type="text"], input[type="email"], input[type="date"], textarea { 
+ width: 100%; 
+ padding: 8px; 
+ margin-boƩom: 15px;
+ border: 1px solid #ccc; 
+ border-radius: 4px; 
+} 
+input[type="radio"], input[type="checkbox"] { 
+ margin-right: 5px; 
+} 
+textarea { 
+ height: 100px; 
+} 
+input[type="submit"] { 
+ background-color: #4CAF50; 
+ color: white; 
+ padding: 10px 15px; 
+ border: none; 
+ border-radius: 4px; 
+ cursor: pointer; 
+ width: 100%; 
+} 
+input[type="submit"]:hover { 
+ background-color: #45a049; 
+} 
